@@ -96,6 +96,10 @@ namespace Kata09
                     Console.Write("\tApplied Discount(s): ");
                     Console.WriteLine("\t" + String.Join(Environment.NewLine + '\t', appliedDiscounts));
                 }
+                else
+                {
+                    Console.Write("\tNo discount applied");
+                }
 
                 Console.WriteLine();
             }
