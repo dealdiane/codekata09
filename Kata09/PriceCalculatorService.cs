@@ -18,6 +18,8 @@ public class PriceCalculatorService
 
     public CalculatedPrice GetBestPrice(CartItem item)
     {
+        // TODO: Reduce duplicate code.
+
         var nonStackableDiscountRules = _nonStackableDiscountRules
             .OrderByDescending(rule => rule.Priority)
             .ToList();

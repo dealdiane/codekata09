@@ -8,5 +8,5 @@ public sealed class StackableHalfPriceDiscountRule : IStackableDiscountRule
 
     public decimal CalculateCartItemPrice(CartItem item, decimal currentPrice) => currentPrice * 0.5m;
 
-    public bool IsDiscountValid(CartItem item) => true;
+    public bool IsDiscountValid(CartItem item) => true;  // Currently valid for all products. Customise/validate as per requirement.
 }

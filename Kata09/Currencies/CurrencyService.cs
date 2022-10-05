@@ -5,7 +5,7 @@ public class CurrencyService
     private const string BaseCurrencyName = "USD";
 
     private static readonly IDictionary<string, Currency> _currencies = new[]
-            {
+    {
         new Currency(BaseCurrencyName, 1.00m),
         new Currency("NZD", 1.74m),
         new Currency("SGD", 1.45m),

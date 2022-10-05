@@ -7,7 +7,8 @@
 
         public void AddProduct(Cart cart, Product product, decimal quantity)
         {
-            //ValidateCartItem()
+            // TODO: Fix call to ValidateCartItem();
+
             var cartItems = _cartItems[cart];
 
             cartItems.Add(new CartItem
@@ -18,25 +19,6 @@
 
             _cartItems[cart] = ConsolidateCartItems(cartItems).ToList();
         }
-
-        //public void ConsolidateCartItems(Cart cart)
-        //{
-        //    var consolidatedCartItems = cart.Items
-        //        .GroupBy(item => item.Product)
-        //        .Select(groupedItem => new CartItem
-        //        {
-        //            Product = groupedItem.Key,
-        //            Quantity = groupedItem.Sum(item => item.Quantity)
-        //        })
-        //        .ToList();
-
-        //    cart.Items.Clear();
-
-        //    foreach (var cartItem in consolidatedCartItems)
-        //    {
-        //        cart.Items.Add(cartItem);
-        //    }
-        //}
 
         public IEnumerable<CartItem> ConsolidateCartItems(IEnumerable<CartItem> cartItems)
         {

@@ -24,7 +24,7 @@ public class OrderService
     public void ValidateCart(Cart cart)
     {
         // TODO:
-        // Add cart validation login.
+        // Add cart validation logic.
         // Throw exception when validation fails.
     }
 

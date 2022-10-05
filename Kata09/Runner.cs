@@ -34,7 +34,8 @@ namespace Kata09
         {
             cancellationToken.ThrowIfCancellationRequested();
 
-            // Setup mock data currencies
+            // Setup mock data
+            // Note: Mock currencies are setup in CurrencyService
             var nzd = _currencyService.GetCurrencyByName("NZD");
             var sgd = _currencyService.GetCurrencyByName("SGD");
             var krw = _currencyService.GetCurrencyByName("KRW");
@@ -51,31 +52,6 @@ namespace Kata09
             _cartService.AddProduct(cart, productA, 1);
             _cartService.AddProduct(cart, productB, 2);
             _cartService.AddProduct(cart, productB, 1);
-
-            //var cart = new Cart();
-
-            //cart.Items.Add(new CartItem
-            //{
-            //    Id = 1,
-            //    Product = productA,
-            //    Quantity = 2
-            //});
-
-            //cart.Items.Add(new CartItem
-            //{
-            //    Id = 1,
-            //    Product = productA,
-            //    Quantity = 1m,
-            //});
-
-            //_cartService.ConsolidateCartItems(cart);
-
-            //cart.Items.Add(new CartItem
-            //{
-            //    Id = 2,
-            //    Product = productB,
-            //    Quantity = 6
-            //});
 
             var order = _orderService.Checkout(cart);
 
@@ -103,16 +79,6 @@ namespace Kata09
 
                 Console.WriteLine();
             }
-
-            //var cartItems = _cartService.GetCartItems(cart).ToList();
-
-            //var priceA = _priceCalculatorService.GetBestPrice(cartItems[0]);
-            ////var priceB = _priceCalculatorService.GetBestPrice(cart.Items[1]);
-
-            //var customerPriceA = _currencyService.Convert(priceA, customer.Currency);
-
-            //Console.WriteLine(_currencyService.RoundOff(customerPriceA).ToString());
-            //Console.WriteLine(priceB);'
 
             return Task.CompletedTask;
         }
